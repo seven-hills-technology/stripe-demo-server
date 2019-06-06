@@ -5,6 +5,7 @@ import {routes} from './routes';
 import {appLogger} from './log';
 import {IRequestApplicationState} from './types/requestApplicationState';
 import {IServerApplicationState} from './types/serverApplicationState';
+import {StripeService} from './services/stripeService';
 
 export async function createServer() {
     const server = new Server({
@@ -29,6 +30,19 @@ export async function createServer() {
         const errorWithCorrelationId = {...e, correlationId, stack: (e.error as Error).stack};
 
         logger.error('Request failed.', errorWithCorrelationId);
+    });
+
+    server.server.ext({
+        type: 'onPreHandler',
+        method: async (request, h) => {
+            // (request.app as IRequestApplicationState).uows = [];
+            //
+            (request.app as IRequestApplicationState).getStripeService = async () => {
+                return new StripeService();
+            };
+
+            return h.continue;
+        }
     });
 
     (server.app as IServerApplicationState).appLogger = appLogger;
