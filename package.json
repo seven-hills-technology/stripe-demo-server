@@ -1,0 +1,62 @@
+{
+  "name": "stripe-demo-api",
+  "version": "0.0.1",
+  "description": "",
+  "license": "ISC",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest --coverage --verbose --detectOpenHandles",
+    "start": "nodemon",
+    "build": "tsc",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "",
+  "jest": {
+    "roots": [
+      "./src",
+      "./test"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/joi": "^15.0.3",
+    "@reperio/hapijs-starter": "^5.1.0",
+    "bcrypt": "^3.0.6",
+    "boom": "^7.3.0",
+    "delay": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.25",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.9.0"
+  },
+  "devDependencies": {
+    "@types/hapi": "^18.0.2",
+    "@types/hapi-auth-jwt2": "^8.6.1",
+    "@types/hapi__hapi": "^18.2.3",
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/lodash": "^4.14.133",
+    "@types/node": "^12.0.4",
+    "@types/uuid": "^3.4.4",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "ts-node-dev": "^1.0.0-pre.39",
+    "typescript": "^3.5.1"
+  }
+}
