@@ -599,10 +599,9 @@
   dependencies:
     hapi-auth-jwt2 "*"
 
-"@types/hapi@^18.0.2":
-  version "18.0.2"
-  resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-18.0.2.tgz#2c3ed843e1e7358486eccf64256e91f7918948b2"
-  integrity sha512-I3THPpOY0G0bXNLzyaqUzMIbqPrci21C1Vqlnek348SJq2Gp7TLSnQbwOb+v/xunxCTzY3o2fV3h7uffL3Ln0w==
+"@types/hapi@https://github.com/seven-hills-technology/types__hapi#v0.0.2":
+  version "18.1.0"
+  resolved "https://github.com/seven-hills-technology/types__hapi#025d10db4d368469352245bd6261fbbeb3a3afbc"
   dependencies:
     "@types/boom" "*"
     "@types/catbox" "*"
